@@ -15,6 +15,7 @@
 
 class Commande {
 public:
+
 	// constructeurs
 	Commande(Client* ptrClient, std::vector<Produit*> ptrPoduitTab, bool statut); 
 	
@@ -31,9 +32,9 @@ public:
 	// methodes
 	
 private:	
-	Client* m_ptrClient;
-	std::vector<Produit*> m_ptrProduitTab;
-	bool m_statut;
+	Client* m_ptrClient;						// adresse du client de la Commande
+	std::vector<Produit*> m_ptrProduitTab;		// tableau pointant vers les produits commandés
+	bool m_statut;								// statut de la commande true=livrée false=pas livrée
 };
 
 #endif

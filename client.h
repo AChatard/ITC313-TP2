@@ -22,19 +22,19 @@ public:
 	//getters
 	std::string getNom();
 	std::string getPrenom();
-	Produit getProduit(int indiceProduit);
+	Produit* getProduit(int indiceProduit);
 
 	//setters
 	void setPrenom(std::string prenom);
 	void setNom(std::string nom);
-	void setProduit(int indiceProduit, Produit produit);
+	void setProduit(int indiceProduit, Produit* produit);
  
 	// methodes
 	
 private:	
-	std::string m_nom;
-	std::string m_prenom;
-	std::vector <Produit> m_tabProduit;
+	std::string m_nom;							// nom du client
+	std::string m_prenom;						// prenom du client
+	std::vector <Produit*> m_tabProduit;		// tabaleau pointant vers les produits représentant le panier du client
 
 };
 

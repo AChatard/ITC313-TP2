@@ -10,6 +10,7 @@
 #include <string>
 #include <iostream>
 
+// constructeurs
 Commande::Commande(Client* ptrClient, std::vector<Produit*> ptrProduitTab, bool statut){
 	m_ptrClient = ptrClient;
 	int tailleParametre = ptrProduitTab.size();
@@ -20,23 +21,23 @@ Commande::Commande(Client* ptrClient, std::vector<Produit*> ptrProduitTab, bool 
 }
 
 // getters
-Client* Commande::getClient(){
+Client* Commande::getClient(){							// retourne l'adresse du client de la commande
 	return m_ptrClient;
 }
-Produit* Commande::getProduit(int indiceProduit){
+Produit* Commande::getProduit(int indiceProduit){		// retourne l'adresse du produit de la commande qui correspond à l'indice spécifié en paramètre 
 	return m_ptrProduitTab.at(indiceProduit);
 }
-bool Commande::getStatut(){
+bool Commande::getStatut(){								// retourn le statut de la commande livrée ou non
 	return m_statut;
 }
 
 // setters
-void Commande::setClient(Client* client){
+void Commande::setClient(Client* client){							// modifie l'adresse du client de la commande
 	m_ptrClient = client;
 }
-void Commande::setProduit(int indiceProduit, Produit* produit){
+void Commande::setProduit(int indiceProduit, Produit* produit){		// modifie l'adresse du produit de la commande qui correspond a lindice spécifié
 	m_ptrProduitTab.at(indiceProduit) = produit;
 }
-void Commande::setStatut(bool statut){
+void Commande::setStatut(bool statut){								// modifie le statut de la commande
 	m_statut = statut;
 }

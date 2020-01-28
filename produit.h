@@ -14,6 +14,7 @@
 
 class Produit {
 public:
+
 	// constructeurs
 	Produit(std::string titre, std::string description, int quantite, float prix); 
 	
@@ -32,17 +33,14 @@ public:
 	// methodes
 
 	// surcharges d'opérateur
-	friend std::ostream& operator << (std::ostream &output, Produit obj);
-	
+	friend std::ostream& operator << (std::ostream &output, Produit obj);	// surcharge de l'opérateur << afin d'afficher le produit
 	
 private:	
-std::string m_titre;
-std::string m_description;
-int m_quantite;
-float m_prix;
+	std::string m_titre;			// titre du produit
+	std::string m_description;		// description du produit
+	int m_quantite;					// quantité disponible du produit
+	float m_prix;					// prix unitaire du produit en euro
 
 };
-
-
 
 #endif
