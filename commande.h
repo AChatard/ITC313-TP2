@@ -9,19 +9,24 @@
 #ifndef _commande_h
 #define _commande_h
 
+
 #include <string>
 #include "client.h"
 #include "produit.h"
 
+
 class Commande {
 public:
+
 	// constructeurs
-	Commande(Client* ptrClient, std::vector<Produit*> ptrPoduitTab, bool statut); 
+	Commande(Client* ptrClient, int id); 
 	
 	//getters
 	Client* getClient();
 	Produit* getProduit(int indiceProduit);
 	bool getStatut();
+	int getNombreProduitCommande();
+	int getId();
 
 	//setters
 	void setClient(Client* ptrClient);
@@ -29,11 +34,17 @@ public:
 	void setStatut(bool statut);
 
 	// methodes
+	void decrireCommande();
+
+	// surcharge de l'opérateur << pour décrire la commande
+	friend std::ostream& operator << (std::ostream &output, Commande obj);	// surcharge de l'opérateur << afin d'afficher la commande
+
 	
-private:	
-	Client* m_ptrClient;
-	std::vector<Produit*> m_ptrProduitTab;
-	bool m_statut;
+private:
+	int m_id;
+	Client* m_ptrClient;						// adresse du client de la Commande
+	std::vector<Produit*> m_ptrProduitTab;		// tableau pointant vers les produits commandés
+	bool m_statut;								// statut de la commande true=livrée false=pas livrée
 };
 
 #endif
